@@ -1,0 +1,39 @@
+@import "../../styles/colors";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  .header {
+    height: 2rem;
+    padding: 1rem;
+    background-color: $primary-background;
+  }
+
+  .title {
+    color: #3166c7;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+
+  .main {
+    height: 100%;
+    background-color: #eff4f7;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .folderContainer {
+      width: 95%;
+      height: 80%;
+      margin: auto;
+      border-radius: 1rem;
+      background-color: #ffffff;
+    }
+
+    .breadCrumbs {
+      padding: 0.5rem;
+    }
+  }
+}

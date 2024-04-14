@@ -1,0 +1,29 @@
+.card {
+  padding: 1rem;
+  padding-bottom: 0.25;
+  background-color: transparent;
+  border: 1px solid #d5e7f1;
+  border-radius: 0.5rem;
+  width: 5rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #d5e7f1;
+    transition: ease-in 20ms;
+  }
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+}
+
+.customTriggerElement {
+  position: relative;
+  left: 55px;
+  top: -13px;
+}
+
+.text {
+  font-size: 12px;
+}
