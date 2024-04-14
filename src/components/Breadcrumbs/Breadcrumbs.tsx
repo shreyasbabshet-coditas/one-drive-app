@@ -3,9 +3,7 @@ import styles from "./Breadcrumbs.module.scss";
 import { BreadcrumbsProps } from "./Breadcrumbs.types.ts";
 import { Link } from "react-router-dom";
 
-const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
-  breadCrumbs,
-}: BreadcrumbsProps) => {
+const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ breadCrumbs }) => {
   return (
     <div className={styles.breadCrumbs}>
       {breadCrumbs.map((breadCrumb, index) => {

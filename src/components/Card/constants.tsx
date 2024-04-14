@@ -8,7 +8,7 @@ export const MENU_OPTIONS = [
     id: "1",
     content: (
       <div>
-        <span>Rename File</span>
+        <span>Rename</span>
       </div>
     ),
   },
@@ -16,7 +16,7 @@ export const MENU_OPTIONS = [
     id: "2",
     content: (
       <div>
-        <span>Delete File</span>
+        <span>Delete</span>
       </div>
     ),
   },

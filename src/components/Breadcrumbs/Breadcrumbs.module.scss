@@ -1,8 +1,10 @@
+@import "../../styles/colors";
+
 .breadCrumbs {
   display: flex;
   align-items: center;
   font-size: 14px;
-  background-color: rgb(240, 231, 231);
+  background-color: $pink;
   border-radius: 0.5rem;
   padding: 1rem;
 }

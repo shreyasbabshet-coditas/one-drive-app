@@ -9,6 +9,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { AppContext } from "../../App.state.tsx";
 import FileCard from "../FileCard/FileCard.tsx";
 import { getInnerContent } from "../../services/folder.service.ts";
+import Card from "../Card/Card.tsx";
 
 const Folders: React.FC = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -97,7 +98,7 @@ const Folders: React.FC = () => {
       },
     });
   };
-
+  console.log(folder);
   return (
     <div className={styles.folders}>
       <div className={styles.create}>
@@ -124,28 +125,33 @@ const Folders: React.FC = () => {
         />
         <span className={styles.text}> New File</span>
       </div>
-      {folder?.folders &&
-        folder?.folders?.map((folder) => {
-          return (
-            <FolderCard
-              key={`${folder.folderId}-folder`}
-              folder={folder}
-              onDoubleClick={handleFolderClick}
-              onRenameFolder={handleRename}
-              onDeleteFolder={handleDelete}
-            />
-          );
-        })}
+      {folder?.folders?.map((folder) => {
+        return (
+          <Card
+            key={`${folder.folderId}-folder`}
+            folder={folder}
+            onDoubleClick={handleFolderClick}
+            onRename={(newName) => handleRename(folder.folderId, newName)}
+            onDelete={handleDelete}
+          />
+        );
+      })}
       {folder?.files &&
         folder.files.map((file) => {
           return (
-            <FileCard
+            // <FileCard
+            //   key={`${file.fileId}-file`}
+            //   file={file}
+            //   onFileRename={(newFileName: string) =>
+            //     handleRenameFile(file.fileId, newFileName)
+            //   }
+            //   onDeleteFile={() => handleDeleteFile(file.fileId)}
+            // />
+            <Card
               key={`${file.fileId}-file`}
               file={file}
-              onFileRename={(newFileName: string) =>
-                handleRenameFile(file.fileId, newFileName)
-              }
-              onDeleteFile={() => handleDeleteFile(file.fileId)}
+              onRename={(newName) => handleRenameFile(file.fileId, newName)}
+              onDelete={handleDeleteFile}
             />
           );
         })}
@@ -155,9 +161,7 @@ const Folders: React.FC = () => {
         onRequestClose={() => setOpenModal(false)}
       >
         <div className={styles.formContainer}>
-          <h3 className={styles.createTitle}>
-            {createFolderMode ? "Create New Folder" : "Create New File"}
-          </h3>
+          <h3>{createFolderMode ? "Create New Folder" : "Create New File"}</h3>
           <input
             value={name}
             className={styles.input}
