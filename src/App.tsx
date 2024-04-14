@@ -8,7 +8,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Dashboard />}>
-          <Route path="" element={<Folders />} />
+          <Route path="one-drive" element={<Folders />} />
           <Route path=":id" element={<Folders />}>
             <Route path=":id" element={<Folders />}>
               <Route path=":id" element={<Folders />}>
