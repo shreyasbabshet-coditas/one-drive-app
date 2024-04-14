@@ -1,4 +1,4 @@
-import { IFile, IFolder } from "../FolderCard/FolderCard.types";
+import { IFile, IFolder } from "../Folders/Folders.types";
 
 export interface CardProps {
     menuOptions?: IMenu[];

@@ -1,4 +1,4 @@
-import { IFolder } from "../components/FolderCard/FolderCard.types";
+import { IFolder } from "../components/Folders/Folders.types";
 
 export const ONE_DRIVE_DATA: IFolder = {
     folderId: 'one-drive',

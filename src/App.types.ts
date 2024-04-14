@@ -1,5 +1,5 @@
 import { IBreadCrumbs } from "./components/Breadcrumbs/Breadcrumbs.types";
-import { IFolder } from "./components/FolderCard/FolderCard.types";
+import { IFolder } from "./components/Folders/Folders.types";
 
 export interface AppState {
     oneDriveData: IFolder | null;

@@ -1,4 +1,4 @@
-import { IFile, IFolder } from "../components/Folders/Folders.types"
+import { IFile, IFolder } from "../Folders/Folders.types"
 
 export const getInnerContent = (
     folderId: string,
@@ -191,20 +191,4 @@ export const renameFile = (
 
     const success = renameRecursive(data);
     return success ? data : null;
-};
-
-export const getFolderById = (
-    folder: IFolder,
-    folderId: string
-): IFolder | undefined => {
-    if (folder.folderId === folderId) {
-        return folder;
-    }
-    if (folder.folders) {
-        for (const subfolder of folder.folders) {
-            const result = getFolderById(subfolder, folderId);
-            if (result) return result;
-        }
-    }
-    return undefined;
 };

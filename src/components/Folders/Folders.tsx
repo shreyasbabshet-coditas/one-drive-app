@@ -1,13 +1,11 @@
-import FolderCard from "../FolderCard/FolderCard.tsx";
 import styles from "./Folders.module.scss";
 import addNewImg from "../../images/add_new_button.png";
 import Modal from "react-modal";
 import { useContext, useEffect, useState } from "react";
 import { customStyles } from "./constants.ts";
-import { IFolder } from "../FolderCard/FolderCard.types.ts";
+import { IFolder } from "../Folders/Folders.types.ts";
 import { useNavigate, useParams } from "react-router-dom";
 import { AppContext } from "../../App.state.tsx";
-import FileCard from "../FileCard/FileCard.tsx";
 import { getInnerContent } from "../../services/folder.service.ts";
 import Card from "../Card/Card.tsx";
 
